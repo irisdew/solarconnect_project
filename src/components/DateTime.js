@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from 'react';
 
 function DateTime({ type }) {
-    const date = new Date();
-    const options = {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-    };
+  const date = new Date();
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
 
-    return (
-        <div className="wrapper__time">
-            <p>{date.toLocaleDateString(type, options)}</p>
-        </div>
-    );
+  return (
+    <div className="wrapper__time">
+      {date.toLocaleDateString(type, options)}
+    </div>
+  );
 }
 
 export default DateTime;
