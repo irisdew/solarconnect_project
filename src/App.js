@@ -21,15 +21,18 @@ function App() {
 
     return (
         <div className="wrapper">
-            <DateTime type="kr" />
+            <DateTime type="ko-KR" />
             <input
                 type="text"
                 ref={inputNums}
                 placeholder="숫자를 입력해주세요"
             />
             <button onClick={handleOnClick}>SORT</button>
-            <Result inputValue={arrData} />
-            <DateTime type="us" />
+            <div className="wrapper__result">
+                <Result inputValue={arrData} desc={false} />
+                <Result inputValue={arrData} desc={true} />
+            </div>
+            <DateTime type="en-US" />
         </div>
     );
 }
