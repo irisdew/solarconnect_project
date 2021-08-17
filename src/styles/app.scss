@@ -8,21 +8,20 @@
   width: 45rem;
   @include flexColumn;
   font-size: 1.5rem;
-  background-color: $bg_color;
   color: $text_black;
+  background-color: $bg_color;
   margin: 2rem auto 0;
   padding: 5rem 0;
   border-radius: 5px;
 }
 
-// Time
 .wrapper__time {
+  width: $dateItem_width;
   text-align: center;
   font-size: 2rem;
   font-weight: 600;
   border-radius: 2rem;
   background-color: white;
-  width: $dateItem_width;
   padding: 4rem 2rem;
 
   div {
@@ -34,7 +33,6 @@
   }
 }
 
-// Input
 input {
   @include inputSize;
   background-color: $input_white;
@@ -47,12 +45,12 @@ input {
 
 button {
   @include inputSize;
-  cursor: pointer;
-  background-color: $button_black;
   color: white;
+  background-color: $button_black;
+  cursor: pointer;
+  margin-top: 1rem;
 }
 
-// sort result
 .wrapper__result {
   @include flexColumn;
   margin-top: 3rem;
