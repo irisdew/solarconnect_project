@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import {sort, makeArrayfromString} from 'utils/sort'
+import { sort, makeArrayfromString } from 'utils/sort';
 function Result({ inputValue, desc }) {
   const [ascSort, setAscSort] = useState([]);
   const [descSort, setDesccSort] = useState([]);
@@ -22,9 +22,13 @@ function Result({ inputValue, desc }) {
 
   return (
     <div className="result">
-      <div className="result__title">{desc ? "내림차순" : "오름차순"}</div>
+      <div className="result__title">{desc ? '내림차순' : '오름차순'}</div>
       <div className="result__content">
-        {desc ? <>{waiting ? "waiting" : <span>{descSort.join(", ")}</span>}</> : <span>{ascSort.join(", ")}</span>}
+        {desc ? (
+          <>{waiting ? 'waiting' : <span>{descSort.join(', ')}</span>}</>
+        ) : (
+          <span>{ascSort.join(', ')}</span>
+        )}
       </div>
     </div>
   );

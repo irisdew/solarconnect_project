@@ -1,81 +1,84 @@
-@import "_variables";
-@import "_mixin";
+@import '_variables';
+@import '_mixin';
 
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
 .wrapper {
-    width: 45rem;
-    height: 100vh;
-    @include flexColumn;
-    font-size: 1.5rem;
-    background-color: $bg_color;
-    color: $text_black;
-    margin: 0 auto;
-    padding-top: 5rem;
+  width: 45rem;
+  @include flexColumn;
+  font-size: 1.5rem;
+  background-color: $bg_color;
+  color: $text_black;
+  margin: 2rem auto 0;
+  padding: 5rem 0;
+  border-radius: 5px;
 }
 
 // Time
 .wrapper__time {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 600;
-    border-radius: 2rem;
-    background-color: white;
-    width: $dateItem_width;
-    padding: 4rem 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  background-color: white;
+  width: $dateItem_width;
+  padding: 4rem 2rem;
 
-    div {
-        margin-bottom: 0.5rem;
-    }
+  div {
+    margin-bottom: 0.5rem;
+  }
 
-    div:last-child {
-        font-size: 2.5rem;
-    }
+  div:last-child {
+    font-size: 2.5rem;
+  }
 }
 
 // Input
 input {
-    @include inputSize;
-    background-color: $input_white;
-    margin-top: 4rem;
+  @include inputSize;
+  background-color: $input_white;
+  margin-top: 4rem;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
 button {
-    @include inputSize;
-    cursor: pointer;
-    background-color: $button_black;
-    color: white;
+  @include inputSize;
+  cursor: pointer;
+  background-color: $button_black;
+  color: white;
 }
 
 // sort result
 .wrapper__result {
-    @include flexColumn;
-    margin-top: 3rem;
+  @include flexColumn;
+  margin-top: 3rem;
 }
 
 .result {
-    @include sortItem;
-    display: flex;
+  @include sortItem;
+  display: flex;
 
-    &:first-child {
-        .result__title {
-            @include sortItemTitle($title_bg);
-        }
-    }
-
-    &:last-child {
-        .result__title {
-            @include sortItemTitle($title_bg2);
-        }
-    }
-
+  &:first-child {
     .result__title {
-        color: white;
+      @include sortItemTitle($title_bg);
     }
+  }
 
-    .result__content {
-        padding-left: 2rem;
+  &:last-child {
+    .result__title {
+      @include sortItemTitle($title_bg2);
     }
+  }
+
+  .result__title {
+    color: white;
+  }
+
+  .result__content {
+    padding-left: 2rem;
+  }
 }
