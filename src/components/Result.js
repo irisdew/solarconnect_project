@@ -7,6 +7,7 @@ function Result({ inputValue }) {
 
     useEffect(() => {
         init();
+        setWaiting(true);
     }, [inputValue]);
 
     // 배열을 내림차순으로 정렬
@@ -57,6 +58,7 @@ function Result({ inputValue }) {
         sortAsc(arr);
         setTimeout(() => {
             sortDesc(arr);
+            setWaiting(false);
         }, 3000);
     }
 
@@ -75,12 +77,13 @@ function Result({ inputValue }) {
             <div className="result">
                 <div className="result__title">내림차순 </div>
                 <div className="result__content">
-                    {waiting ? "waiting" : "d"}
-                    {arrDesc.map((item, index) => (
-                        <span key={index}>
-                            {index !== 0 ? ", " + item : item}
-                        </span>
-                    ))}
+                    {waiting
+                        ? "waiting"
+                        : arrDesc.map((item, index) => (
+                              <span key={index}>
+                                  {index !== 0 ? ", " + item : item}
+                              </span>
+                          ))}
                 </div>
             </div>
         </div>
