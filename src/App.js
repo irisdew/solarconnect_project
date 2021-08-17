@@ -7,15 +7,15 @@ function App() {
   const inputNums = useRef(null);
   const [arrData, setArrData] = useState('');
 
-  function getValueFromInput() {
+  const getValueFromInput = () => {
     const inputValue = inputNums.current.value;
     return inputValue;
-  }
+  };
 
-  function handleOnClick() {
+  const handleOnClick = () => {
     const value = getValueFromInput();
     setArrData(value);
-  }
+  };
 
   return (
     <div className="wrapper">
