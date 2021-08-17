@@ -7,17 +7,15 @@ function App() {
   const inputNums = useRef(null);
   const [arrData, setArrData] = useState('');
 
-  // input 에서 값 가져옴
-  function getValueFromInput() {
+  const getValueFromInput = () => {
     const inputValue = inputNums.current.value;
     return inputValue;
-  }
+  };
 
-  // 버튼 클릭 시
-  function handleOnClick() {
+  const handleOnClick = () => {
     const value = getValueFromInput();
     setArrData(value);
-  }
+  };
 
   return (
     <div className="wrapper">

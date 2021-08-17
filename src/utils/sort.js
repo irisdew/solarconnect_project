@@ -1,7 +1,6 @@
 export const sort = (value, desc) => {
   let arr = value.slice();
 
-  // insert sort
   for (let i = 0; i < arr.length; i++) {
     for (let j = i; j > 0; j--) {
       if (desc ? arr[j] > arr[j - 1] : arr[j] < arr[j - 1]) {
