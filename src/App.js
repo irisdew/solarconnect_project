@@ -1,22 +1,22 @@
-import React, { useState, useRef, useEffect } from 'react'
-import Result from 'components/Result'
-import DateTime from 'components/DateTime'
-import 'styles/app.scss'
+import React, { useState, useRef } from 'react';
+import Result from 'components/Result';
+import DateTime from 'components/DateTime';
+import 'styles/app.scss';
 
 function App() {
-  const inputNums = useRef(null)
-  const [arrData, setArrData] = useState('')
+  const inputNums = useRef(null);
+  const [arrData, setArrData] = useState('');
 
   // input 에서 값 가져옴
   function getValueFromInput() {
-    const inputValue = inputNums.current.value
-    return inputValue
+    const inputValue = inputNums.current.value;
+    return inputValue;
   }
 
   // 버튼 클릭 시
   function handleOnClick() {
-    const value = getValueFromInput()
-    setArrData(value)
+    const value = getValueFromInput();
+    setArrData(value);
   }
 
   return (
@@ -30,7 +30,7 @@ function App() {
       </div>
       <DateTime type="en-US" />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

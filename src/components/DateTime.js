@@ -1,29 +1,28 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 
 function DateTime({ type }) {
-  const [time, setTime] = useState(null)
-  const date = new Date()
+  const [time, setTime] = useState(null);
+  const date = new Date();
   const options = {
     weekday: 'long',
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  }
+  };
 
   useEffect(() => {
-    setTime(date.toLocaleDateString(type, options))
-  }, [])
+    setTime(date.toLocaleDateString(type, options));
+  }, []);
 
   setInterval(() => {
-    setTime(date.toLocaleDateString(type, options))
-  }, 18000)
+    setTime(date.toLocaleDateString(type, options));
+  }, 18000);
 
-  console.log(time)
+  console.log(time);
   return (
     <div className="wrapper__time">
       <p>{time}</p>
     </div>
-  )
+  );
 }
-// 혹시 rafce 안쓰시는지 - 혜린님
-export default DateTime
+export default DateTime;

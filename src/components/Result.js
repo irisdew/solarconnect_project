@@ -1,24 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 
-import { sort, makeArrayfromString } from 'utils/sort'
+import { sort, makeArrayfromString } from 'utils/sort';
 function Result({ inputValue, desc }) {
-  const [ascSort, setAscSort] = useState([])
-  const [descSort, setDesccSort] = useState([])
-
-  const [waiting, setWaiting] = useState(true)
+  const [ascSort, setAscSort] = useState([]);
+  const [descSort, setDesccSort] = useState([]);
+  const [waiting, setWaiting] = useState(false);
 
   useEffect(() => {
-    inputValue && init()
-    setWaiting(true)
-  }, [inputValue])
+    inputValue && init();
+  }, [inputValue]);
 
   function init() {
-    const arr = makeArrayfromString(inputValue)
-    setAscSort(sort(arr, false))
+    setWaiting(true);
+    const arr = makeArrayfromString(inputValue);
+    setAscSort(sort(arr, false));
     setTimeout(() => {
-      setDesccSort(sort(arr, true))
-      setWaiting(false)
-    }, 3000)
+      setDesccSort(sort(arr, true));
+      setWaiting(false);
+    }, 3000);
   }
 
   return (
@@ -32,7 +31,7 @@ function Result({ inputValue, desc }) {
         )}
       </div>
     </div>
-  )
+  );
 }
 
-export default Result
+export default Result;
