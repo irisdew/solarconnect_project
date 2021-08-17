@@ -1,0 +1,32 @@
+@import "_variables";
+@mixin inputSize() {
+    width: $input_width;
+    border: none;
+    border-radius: 3rem;
+    margin-top: 1rem;
+    padding: 2rem;
+}
+
+@mixin sortItem() {
+    width: $item_width;
+    line-height: 8rem;
+    border-radius: 1rem;
+    background-color: $item_color;
+    margin-bottom: 2rem;
+}
+
+@mixin sortItemTitle($bg) {
+    height: 8rem;
+    line-height: 8rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    background-color: $bg;
+    padding: 0 1rem;
+}
+
+@mixin flexColumn() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
