@@ -1,3 +1,80 @@
-div {
-    background-color: lightblue;
+@import "_variables";
+@import "_mixin";
+
+.wrapper {
+    width: 45rem;
+    height: 100vh;
+    @include flexColumn;
+    font-size: 1.5rem;
+    background-color: $bg_color;
+    color: $text_black;
+    margin: 0 auto;
+    padding-top: 5rem;
+}
+
+// Time
+.wrapper__time {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    background-color: white;
+    width: $dateItem_width;
+    padding: 2rem;
+    border-radius: 2rem;
+
+    div {
+        margin-bottom: 0.5rem;
+    }
+
+    div:last-child {
+        font-size: 2.5rem;
+    }
+}
+
+// Input
+input {
+    @include inputSize;
+    background-color: $input_white;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+button {
+    @include inputSize;
+    cursor: pointer;
+    background-color: $button_black;
+    color: white;
+}
+
+// sort result
+.wrapper__result {
+    @include flexColumn;
+    margin-top: 3rem;
+}
+
+.result {
+    @include sortItem;
+    display: flex;
+
+    &:first-child {
+        .result__title {
+            @include sortItemTitle($title_bg);
+        }
+    }
+
+    &:last-child {
+        .result__title {
+            @include sortItemTitle($title_bg2);
+        }
+    }
+
+    .result__title {
+        color: white;
+    }
+
+    .result__content {
+        padding-left: 2rem;
+    }
 }
